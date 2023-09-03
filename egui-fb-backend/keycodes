@@ -1,0 +1,717 @@
+-event3   DEVICE_ADDED            Power Button                      seat0 default group1  cap:k
+-event5   DEVICE_ADDED            Video Bus                         seat0 default group2  cap:k
+-event6   DEVICE_ADDED            Video Bus                         seat0 default group2  cap:k
+-event0   DEVICE_ADDED            Lid Switch                        seat0 default group3  cap:S
+-event2   DEVICE_ADDED            Power Button                      seat0 default group4  cap:k
+-event1   DEVICE_ADDED            Sleep Button                      seat0 default group5  cap:k
+-event8   DEVICE_ADDED            FL.ESPORTS USB Gaming keyboard    seat0 default group6  cap:k
+-event10  DEVICE_ADDED            FL.ESPORTS USB Gaming keyboard Consumer Control seat0 default group6  cap:kp scroll-nat
+-event11  DEVICE_ADDED            FL.ESPORTS USB Gaming keyboard    seat0 default group6  cap:p left scroll-nat scroll-button
+-event12  DEVICE_ADDED            Logitech G502 HERO Gaming Mouse   seat0 default group7  cap:p left scroll-nat scroll-button
+-event13  DEVICE_ADDED            Logitech G502 HERO Gaming Mouse Keyboard seat0 default group7  cap:kp scroll-nat
+-event7   DEVICE_ADDED            AT Translated Set 2 keyboard      seat0 default group8  cap:k
+-event21  DEVICE_ADDED            SynPS/2 Synaptics TouchPad        seat0 default group9  cap:pg  size 107x59mm tap(dl off) left scroll-nat scroll-2fg-edge dwt-on dwtp-on
+-event4   DEVICE_ADDED            MSI WMI hotkeys                   seat0 default group10 cap:k
+-event8   KEYBOARD_KEY            +0.000s	KEY_ESC (1) pressed
+ event8   KEYBOARD_KEY            +0.100s	KEY_ESC (1) released
+ event8   KEYBOARD_KEY            +0.768s	KEY_F1 (59) pressed
+ event8   KEYBOARD_KEY            +0.874s	KEY_F1 (59) released
+ event8   KEYBOARD_KEY            +1.788s	KEY_F2 (60) pressed
+ event8   KEYBOARD_KEY            +1.895s	KEY_F2 (60) released
+ event8   KEYBOARD_KEY            +2.087s	KEY_F3 (61) pressed
+ event8   KEYBOARD_KEY            +2.217s	KEY_F3 (61) released
+ event8   KEYBOARD_KEY            +2.398s	KEY_F4 (62) pressed
+ event8   KEYBOARD_KEY            +2.511s	KEY_F4 (62) released
+ event8   KEYBOARD_KEY            +2.729s	KEY_F5 (63) pressed
+ event8   KEYBOARD_KEY            +2.838s	KEY_F5 (63) released
+ event8   KEYBOARD_KEY            +2.991s	KEY_F6 (64) pressed
+ event8   KEYBOARD_KEY            +3.095s	KEY_F6 (64) released
+ event8   KEYBOARD_KEY            +3.268s	KEY_F7 (65) pressed
+ event8   KEYBOARD_KEY            +3.397s	KEY_F7 (65) released
+ event8   KEYBOARD_KEY            +4.502s	KEY_F8 (66) pressed
+ event8   KEYBOARD_KEY            +4.611s	KEY_F8 (66) released
+ event8   KEYBOARD_KEY            +5.818s	KEY_F9 (67) pressed
+ event8   KEYBOARD_KEY            +5.931s	KEY_F9 (67) released
+ event8   KEYBOARD_KEY            +6.175s	KEY_F10 (68) pressed
+ event8   KEYBOARD_KEY            +6.281s	KEY_F10 (68) released
+ event8   KEYBOARD_KEY            +6.452s	KEY_F11 (87) pressed
+ event8   KEYBOARD_KEY            +6.560s	KEY_F11 (87) released
+ event8   KEYBOARD_KEY            +6.763s	KEY_F12 (88) pressed
+ event8   KEYBOARD_KEY            +6.857s	KEY_F12 (88) released
+ event8   KEYBOARD_KEY            +7.139s	KEY_SYSRQ (99) pressed
+ event8   KEYBOARD_KEY            +7.246s	KEY_SYSRQ (99) released
+ event8   KEYBOARD_KEY            +7.807s	KEY_SCROLLLOCK (70) pressed
+ event8   KEYBOARD_KEY            +7.907s	KEY_SCROLLLOCK (70) released
+ event8   KEYBOARD_KEY            +8.129s	KEY_PAUSE (119) pressed
+ event8   KEYBOARD_KEY            +8.216s	KEY_PAUSE (119) released
+-event12  POINTER_MOTION          +8.357s	  0.00/ -0.13 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +8.359s	  0.00/ -0.37 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +8.361s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +8.363s	  0.00/ -0.84 ( +0.00/ -2.00)
+ event12  POINTER_MOTION          +8.365s	  0.00/ -0.85 ( +0.00/ -2.00)
+ event12  POINTER_MOTION          +8.367s	  0.00/ -1.40 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.369s	  0.00/ -1.57 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.371s	  0.00/ -1.58 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.373s	  0.00/ -2.24 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.375s	  0.00/ -1.67 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.377s	  0.00/ -2.27 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.379s	  0.00/ -2.49 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.381s	  0.00/ -1.72 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.383s	  0.00/ -3.03 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.385s	  0.00/ -2.65 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.387s	  0.00/ -2.49 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.389s	  0.00/ -2.46 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.391s	  0.00/ -2.46 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.393s	  0.00/ -2.43 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.395s	  0.00/ -2.46 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.397s	  0.00/ -2.49 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.399s	  0.00/ -2.44 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.401s	  0.00/ -2.46 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.403s	  0.00/ -2.49 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.405s	  0.00/ -2.44 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.407s	  0.00/ -2.46 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.409s	  0.00/ -4.25 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.411s	  0.00/ -1.98 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.413s	  0.00/ -3.09 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.415s	 -0.71/ -3.54 ( -1.00/ -5.00)
+ event12  POINTER_MOTION          +8.417s	  0.00/ -2.65 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.419s	  0.00/ -3.36 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.421s	  0.00/ -2.68 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.423s	  0.00/ -4.21 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.425s	  0.00/ -2.84 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.427s	  0.00/ -3.35 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.429s	  0.00/ -3.54 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.431s	  0.00/ -3.51 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.433s	  0.00/ -3.57 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.435s	  0.00/ -3.59 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.437s	  0.00/ -3.54 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.439s	  0.00/ -4.50 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.441s	 -0.76/ -3.78 ( -1.00/ -5.00)
+ event12  POINTER_MOTION          +8.443s	  0.00/ -5.65 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.445s	  0.00/ -5.83 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.447s	  0.00/ -5.83 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.449s	  0.00/ -5.83 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.451s	 -0.83/ -5.00 ( -1.00/ -6.00)
+ event12  POINTER_MOTION          +8.453s	  0.00/ -4.92 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.455s	  0.00/ -5.80 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.457s	  0.00/ -4.95 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.459s	  0.00/ -5.77 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.461s	  0.00/ -4.97 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.463s	 -0.83/ -5.80 ( -1.00/ -7.00)
+ event12  POINTER_MOTION          +8.465s	  0.00/ -4.95 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.467s	  0.00/ -4.85 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.469s	  0.00/ -3.80 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.471s	  0.00/ -5.53 ( +0.00/ -7.00)
+ event12  POINTER_MOTION          +8.473s	  0.00/ -3.97 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.475s	  0.00/ -3.56 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.477s	  0.00/ -3.56 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.479s	  0.00/ -3.55 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.481s	  0.00/ -3.59 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.483s	  0.00/ -3.55 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.485s	  0.71/ -3.53 ( +1.00/ -5.00)
+ event12  POINTER_MOTION          +8.487s	  0.00/ -4.60 ( +0.00/ -6.00)
+ event12  POINTER_MOTION          +8.489s	  0.00/ -2.90 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.491s	  0.00/ -3.32 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.493s	  0.72/ -3.58 ( +1.00/ -5.00)
+ event12  POINTER_MOTION          +8.495s	  0.00/ -2.67 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.497s	  0.00/ -3.31 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.499s	  0.00/ -2.65 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.501s	  0.00/ -3.31 ( +0.00/ -5.00)
+ event12  POINTER_MOTION          +8.503s	  0.67/ -2.67 ( +1.00/ -4.00)
+ event12  POINTER_MOTION          +8.505s	  0.00/ -2.48 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.507s	  0.00/ -2.48 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.509s	  0.62/ -2.48 ( +1.00/ -4.00)
+ event12  POINTER_MOTION          +8.511s	  0.00/ -2.47 ( +0.00/ -4.00)
+ event12  POINTER_MOTION          +8.513s	  0.00/ -1.04 ( +0.00/ -2.00)
+ event12  POINTER_MOTION          +8.515s	  0.00/ -1.41 ( +0.00/ -3.00)
+ event12  POINTER_MOTION          +8.517s	  0.48/ -0.96 ( +1.00/ -2.00)
+ event12  POINTER_MOTION          +8.519s	  0.00/ -0.87 ( +0.00/ -2.00)
+ event12  POINTER_MOTION          +8.521s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +8.523s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +8.525s	  0.00/ -0.84 ( +0.00/ -2.00)
+ event12  POINTER_MOTION          +8.527s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.653s	  0.00/  0.37 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.657s	  0.00/  0.33 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.659s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.661s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.663s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.665s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +8.667s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.669s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +8.671s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.673s	  0.00/  0.83 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.675s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +8.677s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.679s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +8.681s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.683s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +8.685s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.687s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.689s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.691s	  0.42/  0.85 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +8.693s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.695s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.697s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.699s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +8.701s	  0.00/  0.83 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +8.703s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.705s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.707s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.709s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +8.711s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.715s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.717s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +8.725s	  0.00/  0.40 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.835s	  0.24/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.837s	  0.00/  0.37 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.839s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.843s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.845s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.849s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.905s	  0.33/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.909s	  0.00/  0.33 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +8.915s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +8.923s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_BUTTON          +8.975s	BTN_LEFT (272) pressed, seat count: 1
+ event12  POINTER_BUTTON          +9.077s	BTN_LEFT (272) released, seat count: 0
+-event8   KEYBOARD_KEY            +10.087s	KEY_GRAVE (41) pressed
+ event8   KEYBOARD_KEY            +10.191s	KEY_GRAVE (41) released
+ event8   KEYBOARD_KEY            +10.792s	KEY_1 (2) pressed
+ event8   KEYBOARD_KEY            +10.898s	KEY_1 (2) released
+ event8   KEYBOARD_KEY            +11.094s	KEY_2 (3) pressed
+ event8   KEYBOARD_KEY            +11.201s	KEY_2 (3) released
+ event8   KEYBOARD_KEY            +11.402s	KEY_3 (4) pressed
+ event8   KEYBOARD_KEY            +11.520s	KEY_3 (4) released
+ event8   KEYBOARD_KEY            +11.661s	KEY_4 (5) pressed
+ event8   KEYBOARD_KEY            +11.768s	KEY_4 (5) released
+ event8   KEYBOARD_KEY            +11.953s	KEY_5 (6) pressed
+ event8   KEYBOARD_KEY            +12.061s	KEY_5 (6) released
+ event8   KEYBOARD_KEY            +12.215s	KEY_6 (7) pressed
+ event8   KEYBOARD_KEY            +12.323s	KEY_6 (7) released
+ event8   KEYBOARD_KEY            +12.462s	KEY_7 (8) pressed
+ event8   KEYBOARD_KEY            +12.586s	KEY_7 (8) released
+ event8   KEYBOARD_KEY            +12.758s	KEY_8 (9) pressed
+ event8   KEYBOARD_KEY            +12.857s	KEY_8 (9) released
+ event8   KEYBOARD_KEY            +13.035s	KEY_9 (10) pressed
+ event8   KEYBOARD_KEY            +13.141s	KEY_9 (10) released
+ event8   KEYBOARD_KEY            +13.317s	KEY_0 (11) pressed
+ event8   KEYBOARD_KEY            +13.447s	KEY_0 (11) released
+ event8   KEYBOARD_KEY            +13.623s	KEY_MINUS (12) pressed
+ event8   KEYBOARD_KEY            +13.726s	KEY_MINUS (12) released
+ event8   KEYBOARD_KEY            +13.901s	KEY_EQUAL (13) pressed
+ event8   KEYBOARD_KEY            +14.008s	KEY_EQUAL (13) released
+ event8   KEYBOARD_KEY            +14.190s	KEY_BACKSPACE (14) pressed
+ event8   KEYBOARD_KEY            +14.302s	KEY_BACKSPACE (14) released
+ event8   KEYBOARD_KEY            +14.523s	KEY_INSERT (110) pressed
+ event8   KEYBOARD_KEY            +14.626s	KEY_INSERT (110) released
+ event8   KEYBOARD_KEY            +14.819s	KEY_HOME (102) pressed
+ event8   KEYBOARD_KEY            +14.927s	KEY_HOME (102) released
+ event8   KEYBOARD_KEY            +15.113s	KEY_PAGEUP (104) pressed
+ event8   KEYBOARD_KEY            +15.221s	KEY_PAGEUP (104) released
+ event8   KEYBOARD_KEY            +15.381s	KEY_NUMLOCK (69) pressed
+ event8   KEYBOARD_KEY            +15.493s	KEY_NUMLOCK (69) released
+ event8   KEYBOARD_KEY            +15.655s	KEY_KPSLASH (98) pressed
+ event8   KEYBOARD_KEY            +15.758s	KEY_KPSLASH (98) released
+ event8   KEYBOARD_KEY            +15.952s	KEY_KPASTERISK (55) pressed
+ event8   KEYBOARD_KEY            +16.061s	KEY_KPASTERISK (55) released
+ event8   KEYBOARD_KEY            +16.231s	KEY_KPMINUS (74) pressed
+ event8   KEYBOARD_KEY            +16.320s	KEY_KPMINUS (74) released
+ event8   KEYBOARD_KEY            +17.667s	KEY_TAB (15) pressed
+ event8   KEYBOARD_KEY            +17.777s	KEY_TAB (15) released
+ event8   KEYBOARD_KEY            +17.976s	KEY_Q (16) pressed
+ event8   KEYBOARD_KEY            +18.091s	KEY_Q (16) released
+ event8   KEYBOARD_KEY            +18.261s	KEY_W (17) pressed
+ event8   KEYBOARD_KEY            +18.365s	KEY_W (17) released
+ event8   KEYBOARD_KEY            +18.518s	KEY_E (18) pressed
+ event8   KEYBOARD_KEY            +18.629s	KEY_E (18) released
+ event8   KEYBOARD_KEY            +18.784s	KEY_R (19) pressed
+ event8   KEYBOARD_KEY            +18.894s	KEY_R (19) released
+ event8   KEYBOARD_KEY            +19.039s	KEY_T (20) pressed
+ event8   KEYBOARD_KEY            +19.154s	KEY_T (20) released
+ event8   KEYBOARD_KEY            +19.289s	KEY_Y (21) pressed
+ event8   KEYBOARD_KEY            +19.403s	KEY_Y (21) released
+ event8   KEYBOARD_KEY            +19.574s	KEY_U (22) pressed
+ event8   KEYBOARD_KEY            +19.680s	KEY_U (22) released
+ event8   KEYBOARD_KEY            +19.853s	KEY_I (23) pressed
+ event8   KEYBOARD_KEY            +19.971s	KEY_I (23) released
+ event8   KEYBOARD_KEY            +20.136s	KEY_O (24) pressed
+ event8   KEYBOARD_KEY            +20.247s	KEY_O (24) released
+ event8   KEYBOARD_KEY            +20.423s	KEY_P (25) pressed
+ event8   KEYBOARD_KEY            +20.519s	KEY_P (25) released
+ event8   KEYBOARD_KEY            +20.700s	KEY_LEFTBRACE (26) pressed
+ event8   KEYBOARD_KEY            +20.792s	KEY_LEFTBRACE (26) released
+ event8   KEYBOARD_KEY            +20.956s	KEY_RIGHTBRACE (27) pressed
+ event8   KEYBOARD_KEY            +21.069s	KEY_RIGHTBRACE (27) released
+ event8   KEYBOARD_KEY            +21.264s	KEY_BACKSLASH (43) pressed
+ event8   KEYBOARD_KEY            +21.362s	KEY_BACKSLASH (43) released
+ event8   KEYBOARD_KEY            +21.561s	KEY_DELETE (111) pressed
+ event8   KEYBOARD_KEY            +21.675s	KEY_DELETE (111) released
+ event8   KEYBOARD_KEY            +21.868s	KEY_END (107) pressed
+ event8   KEYBOARD_KEY            +21.973s	KEY_END (107) released
+ event8   KEYBOARD_KEY            +22.163s	KEY_PAGEDOWN (109) pressed
+ event8   KEYBOARD_KEY            +22.269s	KEY_PAGEDOWN (109) released
+ event8   KEYBOARD_KEY            +22.482s	KEY_KP7 (71) pressed
+ event8   KEYBOARD_KEY            +22.586s	KEY_KP7 (71) released
+ event8   KEYBOARD_KEY            +22.733s	KEY_KP8 (72) pressed
+ event8   KEYBOARD_KEY            +22.842s	KEY_KP8 (72) released
+ event8   KEYBOARD_KEY            +22.995s	KEY_KP9 (73) pressed
+ event8   KEYBOARD_KEY            +23.109s	KEY_KP9 (73) released
+ event8   KEYBOARD_KEY            +23.322s	KEY_KPPLUS (78) pressed
+ event8   KEYBOARD_KEY            +23.424s	KEY_KPPLUS (78) released
+ event8   KEYBOARD_KEY            +24.880s	KEY_CAPSLOCK (58) pressed
+ event8   KEYBOARD_KEY            +25.008s	KEY_CAPSLOCK (58) released
+ event8   KEYBOARD_KEY            +25.760s	KEY_A (30) pressed
+ event8   KEYBOARD_KEY            +25.866s	KEY_A (30) released
+ event8   KEYBOARD_KEY            +26.013s	KEY_S (31) pressed
+ event8   KEYBOARD_KEY            +26.128s	KEY_S (31) released
+ event8   KEYBOARD_KEY            +26.286s	KEY_D (32) pressed
+ event8   KEYBOARD_KEY            +26.401s	KEY_D (32) released
+ event8   KEYBOARD_KEY            +26.562s	KEY_F (33) pressed
+ event8   KEYBOARD_KEY            +26.649s	KEY_F (33) released
+ event8   KEYBOARD_KEY            +26.821s	KEY_G (34) pressed
+ event8   KEYBOARD_KEY            +26.929s	KEY_G (34) released
+ event8   KEYBOARD_KEY            +27.083s	KEY_H (35) pressed
+ event8   KEYBOARD_KEY            +27.193s	KEY_H (35) released
+ event8   KEYBOARD_KEY            +27.363s	KEY_J (36) pressed
+ event8   KEYBOARD_KEY            +27.492s	KEY_J (36) released
+ event8   KEYBOARD_KEY            +27.821s	KEY_K (37) pressed
+ event8   KEYBOARD_KEY            +27.911s	KEY_K (37) released
+ event8   KEYBOARD_KEY            +28.094s	KEY_L (38) pressed
+ event8   KEYBOARD_KEY            +28.204s	KEY_L (38) released
+ event8   KEYBOARD_KEY            +28.374s	KEY_SEMICOLON (39) pressed
+ event8   KEYBOARD_KEY            +28.469s	KEY_SEMICOLON (39) released
+ event8   KEYBOARD_KEY            +28.622s	KEY_APOSTROPHE (40) pressed
+ event8   KEYBOARD_KEY            +28.723s	KEY_APOSTROPHE (40) released
+ event8   KEYBOARD_KEY            +28.921s	KEY_ENTER (28) pressed
+ event8   KEYBOARD_KEY            +29.011s	KEY_ENTER (28) released
+ event8   KEYBOARD_KEY            +29.616s	KEY_KP4 (75) pressed
+ event8   KEYBOARD_KEY            +29.742s	KEY_KP4 (75) released
+ event8   KEYBOARD_KEY            +29.895s	KEY_KP5 (76) pressed
+ event8   KEYBOARD_KEY            +30.021s	KEY_KP5 (76) released
+ event8   KEYBOARD_KEY            +30.194s	KEY_KP6 (77) pressed
+ event8   KEYBOARD_KEY            +30.304s	KEY_KP6 (77) released
+ event8   KEYBOARD_KEY            +32.610s	KEY_LEFTSHIFT (42) pressed
+ event8   KEYBOARD_KEY            +32.714s	KEY_LEFTSHIFT (42) released
+ event8   KEYBOARD_KEY            +32.907s	KEY_Z (44) pressed
+ event8   KEYBOARD_KEY            +32.995s	KEY_Z (44) released
+ event8   KEYBOARD_KEY            +33.165s	KEY_X (45) pressed
+ event8   KEYBOARD_KEY            +33.257s	KEY_X (45) released
+ event8   KEYBOARD_KEY            +33.451s	KEY_C (46) pressed
+-event12  POINTER_MOTION          +33.471s	  0.00/  0.28 ( +0.00/ +1.00)
+-event8   KEYBOARD_KEY            +33.560s	KEY_C (46) released
+ event8   KEYBOARD_KEY            +33.718s	KEY_V (47) pressed
+ event8   KEYBOARD_KEY            +33.825s	KEY_V (47) released
+ event8   KEYBOARD_KEY            +34.043s	KEY_B (48) pressed
+ event8   KEYBOARD_KEY            +34.164s	KEY_B (48) released
+ event8   KEYBOARD_KEY            +34.335s	KEY_N (49) pressed
+ event8   KEYBOARD_KEY            +34.445s	KEY_N (49) released
+ event8   KEYBOARD_KEY            +34.629s	KEY_M (50) pressed
+ event8   KEYBOARD_KEY            +34.743s	KEY_M (50) released
+ event8   KEYBOARD_KEY            +34.914s	KEY_COMMA (51) pressed
+ event8   KEYBOARD_KEY            +35.020s	KEY_COMMA (51) released
+ event8   KEYBOARD_KEY            +35.234s	KEY_DOT (52) pressed
+ event8   KEYBOARD_KEY            +35.383s	KEY_DOT (52) released
+ event8   KEYBOARD_KEY            +35.522s	KEY_SLASH (53) pressed
+ event8   KEYBOARD_KEY            +35.630s	KEY_SLASH (53) released
+-event12  POINTER_MOTION          +35.949s	  0.00/  0.13 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.957s	  0.00/  0.24 ( +0.00/ +1.00)
+-event8   KEYBOARD_KEY            +35.958s	KEY_RIGHTSHIFT (54) pressed
+-event12  POINTER_MOTION          +35.961s	  0.00/  0.40 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.967s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.969s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.973s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.977s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.981s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.983s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.989s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.993s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +35.999s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +36.007s	  0.00/  0.38 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +36.015s	  0.00/  0.34 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +36.061s	  0.00/  0.25 ( +0.00/ +1.00)
+-event8   KEYBOARD_KEY            +36.063s	KEY_RIGHTSHIFT (54) released
+ event8   KEYBOARD_KEY            +36.358s	KEY_UP (103) pressed
+ event8   KEYBOARD_KEY            +36.451s	KEY_UP (103) released
+ event8   KEYBOARD_KEY            +36.727s	KEY_KP1 (79) pressed
+ event8   KEYBOARD_KEY            +36.842s	KEY_KP1 (79) released
+ event8   KEYBOARD_KEY            +37.015s	KEY_KP2 (80) pressed
+ event8   KEYBOARD_KEY            +37.122s	KEY_KP2 (80) released
+ event8   KEYBOARD_KEY            +37.315s	KEY_KP3 (81) pressed
+ event8   KEYBOARD_KEY            +37.401s	KEY_KP3 (81) released
+ event8   KEYBOARD_KEY            +37.579s	KEY_KPENTER (96) pressed
+ event8   KEYBOARD_KEY            +37.664s	KEY_KPENTER (96) released
+-event12  POINTER_MOTION          +37.727s	  0.00/  0.14 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.731s	  0.00/  0.32 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.733s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.737s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.739s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.741s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +37.745s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.747s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.749s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.751s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +37.753s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.755s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.757s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.759s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.763s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.765s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.767s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +37.769s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.773s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.779s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +37.787s	  0.00/  0.38 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +38.995s	  0.00/  0.23 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.001s	  0.00/  0.27 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.005s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.011s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.015s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.017s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.025s	  0.00/  0.40 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.033s	  0.00/  0.34 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.039s	  0.00/  0.38 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.055s	  0.00/  0.33 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +39.075s	  0.00/  0.22 ( +0.00/ +1.00)
+-event8   KEYBOARD_KEY            +39.095s	KEY_LEFTCTRL (29) pressed
+ event8   KEYBOARD_KEY            +39.206s	KEY_LEFTCTRL (29) released
+ event8   KEYBOARD_KEY            +39.359s	KEY_LEFTMETA (125) pressed
+ event8   KEYBOARD_KEY            +39.488s	KEY_LEFTMETA (125) released
+ event8   KEYBOARD_KEY            +39.675s	KEY_LEFTALT (56) pressed
+ event8   KEYBOARD_KEY            +39.780s	KEY_LEFTALT (56) released
+ event8   KEYBOARD_KEY            +41.305s	KEY_SPACE (57) pressed
+ event8   KEYBOARD_KEY            +41.415s	KEY_SPACE (57) released
+-event12  POINTER_MOTION          +42.895s	  0.00/  0.17 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.897s	  0.00/  0.37 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.899s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.901s	  0.42/  0.85 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.903s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +42.905s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.907s	  0.95/  0.95 ( +2.00/ +2.00)
+ event12  POINTER_MOTION          +42.909s	  0.52/  1.56 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +42.911s	  0.54/  1.62 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +42.913s	  0.53/  1.60 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +42.915s	  1.03/  1.03 ( +2.00/ +2.00)
+ event12  POINTER_MOTION          +42.917s	  0.52/  1.56 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +42.919s	  0.50/  0.99 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.921s	  1.03/  1.54 ( +2.00/ +3.00)
+ event12  POINTER_MOTION          +42.923s	  0.51/  1.03 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.925s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +42.927s	  1.68/  2.23 ( +3.00/ +4.00)
+ event12  POINTER_MOTION          +42.929s	  0.57/  1.15 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.931s	  1.03/  1.55 ( +2.00/ +3.00)
+ event12  POINTER_MOTION          +42.933s	  0.51/  1.03 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.935s	  0.44/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.937s	  0.45/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.939s	  0.96/  0.96 ( +2.00/ +2.00)
+ event12  POINTER_MOTION          +42.941s	  0.48/  0.95 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.943s	  1.01/  1.52 ( +2.00/ +3.00)
+ event12  POINTER_MOTION          +42.945s	  0.48/  0.48 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.947s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.949s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.951s	  0.46/  1.38 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +42.953s	  0.46/  0.46 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.955s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.957s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.959s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.961s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.963s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.965s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.967s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +42.969s	  0.87/  0.44 ( +2.00/ +1.00)
+ event12  POINTER_MOTION          +42.971s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.973s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +42.975s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.977s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.979s	  0.00/  0.83 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +42.981s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.985s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.987s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.989s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.991s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.993s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +42.995s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +42.999s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.001s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.003s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.005s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.007s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.009s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.011s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.015s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.017s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.019s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.021s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.023s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.025s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.027s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.029s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.031s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.033s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.035s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.037s	  0.42/  0.85 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.039s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.041s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.043s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.045s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.047s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.049s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.051s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.053s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.055s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.057s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.059s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.061s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.063s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.065s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.067s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.069s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.071s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.073s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.075s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.077s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.079s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.081s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.083s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.085s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.087s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.089s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.091s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.093s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.095s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.097s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.099s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.101s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.103s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.105s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.107s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.109s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.111s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.113s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.115s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.117s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.119s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.121s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.123s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.125s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.127s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.129s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +43.131s	  0.00/  0.84 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.133s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.135s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.137s	  0.00/  0.83 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.139s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.141s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.143s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.145s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.147s	  0.45/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.149s	  0.45/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.151s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.153s	  0.45/  1.34 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.155s	  0.49/  0.98 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.157s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.159s	  0.00/  1.35 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.161s	  0.48/  0.97 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.163s	  0.95/  0.95 ( +2.00/ +2.00)
+ event12  POINTER_MOTION          +43.165s	  0.00/  1.54 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.167s	  0.48/  0.97 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.169s	  0.45/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.171s	  0.49/  1.47 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.173s	  0.00/  0.96 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.175s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.177s	  1.11/  2.21 ( +2.00/ +4.00)
+ event12  POINTER_MOTION          +43.179s	  0.00/  1.08 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.181s	  0.48/  1.43 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.183s	  0.53/  1.60 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.185s	  0.49/  0.97 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.187s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.189s	  0.44/  0.88 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.191s	  0.49/  1.48 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.193s	  0.49/  0.98 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.195s	  0.00/  1.45 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.197s	  0.48/  0.97 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.199s	  0.45/  0.89 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.201s	  0.49/  1.47 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.203s	  0.00/  0.96 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.205s	  0.48/  1.45 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.207s	  0.00/  0.96 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.209s	  0.48/  1.43 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.211s	  0.49/  0.98 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.213s	  0.49/  1.47 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.215s	  0.00/  0.96 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.217s	  0.48/  1.44 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.219s	  0.58/  2.33 ( +1.00/ +4.00)
+ event12  POINTER_MOTION          +43.221s	  0.58/  1.74 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.223s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.225s	  0.53/  1.58 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.227s	  0.54/  1.61 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.229s	  0.54/  1.61 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.231s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.233s	  0.48/  0.97 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.235s	  0.54/  2.14 ( +1.00/ +4.00)
+ event12  POINTER_MOTION          +43.237s	  0.58/  1.74 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.239s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.241s	  0.53/  1.59 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.243s	  0.58/  2.32 ( +1.00/ +4.00)
+ event12  POINTER_MOTION          +43.245s	  0.00/  1.72 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.247s	  0.53/  1.58 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.249s	  0.00/  2.29 ( +0.00/ +4.00)
+ event12  POINTER_MOTION          +43.251s	  0.57/  1.72 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.253s	  0.54/  1.61 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.255s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.257s	  0.53/  1.58 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.259s	  0.00/  1.59 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.261s	  0.53/  1.59 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.263s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.265s	  0.53/  1.58 ( +1.00/ +3.00)
+ event12  POINTER_MOTION          +43.267s	  0.00/  1.58 ( +0.00/ +3.00)
+ event12  POINTER_MOTION          +43.269s	  0.00/  0.94 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.271s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.273s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.275s	  0.44/  0.87 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.277s	  0.00/  0.87 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.279s	  0.00/  0.85 ( +0.00/ +2.00)
+ event12  POINTER_MOTION          +43.281s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.283s	  0.42/  0.84 ( +1.00/ +2.00)
+ event12  POINTER_MOTION          +43.285s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.287s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.289s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.291s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.293s	  0.42/  0.42 ( +1.00/ +1.00)
+ event12  POINTER_MOTION          +43.295s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.297s	  0.00/  0.42 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.311s	  0.00/  0.39 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +43.409s	 -0.20/  0.00 ( -1.00/ +0.00)
+ event12  POINTER_MOTION          +43.415s	  0.00/ -0.28 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +43.417s	 -0.42/  0.00 ( -1.00/ +0.00)
+ event12  POINTER_MOTION          +43.425s	 -0.40/  0.00 ( -1.00/ +0.00)
+ event12  POINTER_MOTION          +43.435s	 -0.32/  0.00 ( -1.00/ +0.00)
+ event12  POINTER_MOTION          +43.447s	  0.00/ -0.28 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +43.449s	 -0.39/  0.00 ( -1.00/ +0.00)
+ event12  POINTER_MOTION          +43.497s	  0.00/ -0.37 ( +0.00/ -1.00)
+ event12  POINTER_BUTTON          +43.503s	BTN_LEFT (272) pressed, seat count: 1
+ event12  POINTER_BUTTON          +43.601s	BTN_LEFT (272) released, seat count: 0
+-event8   KEYBOARD_KEY            +43.930s	KEY_RIGHTALT (100) pressed
+ event8   KEYBOARD_KEY            +44.035s	KEY_RIGHTALT (100) released
+ event8   KEYBOARD_KEY            +44.748s	KEY_COMPOSE (127) pressed
+ event8   KEYBOARD_KEY            +44.840s	KEY_COMPOSE (127) released
+ event8   KEYBOARD_KEY            +45.226s	KEY_RIGHTCTRL (97) pressed
+ event8   KEYBOARD_KEY            +45.326s	KEY_RIGHTCTRL (97) released
+-event12  POINTER_MOTION          +46.003s	  0.14/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.007s	  0.00/ -0.32 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.009s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.011s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.013s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.015s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.017s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.019s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.021s	  0.88/ -0.88 ( +2.00/ -2.00)
+ event12  POINTER_MOTION          +46.023s	  0.44/ -0.44 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.025s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.027s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.029s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.031s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.033s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.035s	  0.85/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.037s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.039s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.041s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.043s	  0.84/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.045s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.047s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.049s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.051s	  0.84/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.053s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.055s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.057s	  0.84/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.059s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.061s	  0.84/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.063s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.065s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.067s	  0.84/  0.00 ( +2.00/ +0.00)
+ event12  POINTER_MOTION          +46.069s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.071s	  0.84/ -0.42 ( +2.00/ -1.00)
+ event12  POINTER_MOTION          +46.073s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.075s	  0.84/  0.00 ( +2.00/ +0.00)
+ event12  POINTER_MOTION          +46.077s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.079s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.081s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.083s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.085s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.087s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.089s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.091s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.093s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.097s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.099s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.101s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.103s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.107s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.111s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.113s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.117s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.119s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.121s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.123s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.125s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.127s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.129s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.131s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.133s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.135s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.137s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.139s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.141s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.143s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.147s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.149s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.151s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.153s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.155s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.157s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.159s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.161s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.163s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.165s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.167s	  0.00/ -0.42 ( +0.00/ -1.00)
+ event12  POINTER_MOTION          +46.169s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.171s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.173s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.177s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.179s	  0.42/ -0.42 ( +1.00/ -1.00)
+ event12  POINTER_MOTION          +46.181s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.187s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.191s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.193s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.201s	  0.40/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.211s	  0.32/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.215s	  0.40/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.231s	  0.37/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.243s	  0.25/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.251s	  0.31/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.259s	  0.34/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.265s	  0.38/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.271s	  0.42/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_MOTION          +46.287s	  0.00/  0.33 ( +0.00/ +1.00)
+ event12  POINTER_MOTION          +46.289s	  0.39/  0.00 ( +1.00/ +0.00)
+ event12  POINTER_BUTTON          +46.543s	BTN_LEFT (272) pressed, seat count: 1
+ event12  POINTER_BUTTON          +46.659s	BTN_LEFT (272) released, seat count: 0
+-event8   KEYBOARD_KEY            +46.918s	KEY_LEFT (105) pressed
+ event8   KEYBOARD_KEY            +47.022s	KEY_LEFT (105) released
+ event8   KEYBOARD_KEY            +47.186s	KEY_DOWN (108) pressed
+ event8   KEYBOARD_KEY            +47.305s	KEY_DOWN (108) released
+ event8   KEYBOARD_KEY            +47.449s	KEY_RIGHT (106) pressed
+ event8   KEYBOARD_KEY            +47.560s	KEY_RIGHT (106) released
+ event8   KEYBOARD_KEY            +47.972s	KEY_KP0 (82) pressed
+ event8   KEYBOARD_KEY            +48.080s	KEY_KP0 (82) released
+ event8   KEYBOARD_KEY            +48.313s	KEY_KPDOT (83) pressed
+ event8   KEYBOARD_KEY            +48.440s	KEY_KPDOT (83) released
+ event8   KEYBOARD_KEY            +49.570s	KEY_LEFTCTRL (29) pressed
+ event8   KEYBOARD_KEY            +49.675s	KEY_LEFTCTRL (29) released
+-event12  POINTER_MOTION          +50.291s	  0.00/  0.37 ( +0.00/ +1.00)
+-event8   KEYBOARD_KEY            +51.201s	KEY_ENTER (28) pressed
+ event8   KEYBOARD_KEY            +51.273s	KEY_ENTER (28) released
+ event8   KEYBOARD_KEY            +51.353s	KEY_ENTER (28) pressed
+ event8   KEYBOARD_KEY            +51.417s	KEY_ENTER (28) released
+ event8   KEYBOARD_KEY            +51.560s	KEY_LEFTCTRL (29) pressed
+ event8   KEYBOARD_KEY            +51.742s	KEY_C (46) pressed
+
