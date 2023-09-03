@@ -1,5 +1,7 @@
 all: build-rust add-custom-hooks build install
 
+
+
 build-rust:
 	cd boot-menu && cargo build --release
 

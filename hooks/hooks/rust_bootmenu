@@ -2,6 +2,7 @@
 
 run_hook() {
     echo "Launching boot menu..."
-    /bin/boot-menu
+    openvt -f -c 37 -s -w  -- /bin/boot-menu
+    modprobe nouveau
     echo "Boot menu exited, continuing boot..."
 }

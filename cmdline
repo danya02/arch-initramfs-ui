@@ -3,3 +3,4 @@ root=/dev/mapper/arch_vg-root
 rw
 cryptdevice=UUID=7537b139-51c6-48ed-a548-f035e0728638:cryptlvm
 loglevel=3
+console=tty1

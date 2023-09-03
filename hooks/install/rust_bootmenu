@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 build() {
-    add_binary "/home/$(whoami)/Projects/arch-initramfs-ui/target/release/boot-menu" "/bin/boot-menu"
+    add_binary "/home/$(whoami)/Projects/arch-initramfs-ui/boot-menu/target/release/boot-menu" "/bin/boot-menu"
     add_module "nouveau"
+    add_binary "fbterm"
+    add_binary "openvt"
+    add_binary "chvt"
+    add_binary "deallocvt"
+
     add_runscript
 }
 
