@@ -1,0 +1,7 @@
+#!/bin/bash
+
+run_latehook() {
+  echo "Dropping you to a shell. Have fun!"
+  /bin/bash
+  echo "Shell has exited. Continuing with booting..."
+}
