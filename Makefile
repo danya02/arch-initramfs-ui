@@ -1,4 +1,7 @@
-all: add-custom-hooks build install
+all: build-rust add-custom-hooks build install
+
+build-rust:
+	cd boot-menu && cargo build --release
 
 build:
 	mkinitcpio -p ./linux.preset

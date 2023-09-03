@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+build() {
+    add_binary "/home/$(whoami)/Projects/arch-initramfs-ui/target/release/boot-menu" "/bin/boot-menu"
+    add_module "nouveau"
+    add_runscript
+}
+
+help() {
+    cat <<HELPEOF
+This hook adds the Rust boot menu program and runs it.
+
+It requires the root project directory to be at "/home/<whoami>/Projects/arch-initramfs-ui";
+change the install hook to change it.
+
+Also, the Rust boot menu is responsible for running "modprobe nouveau"
+at the point where it has decided that we're okay to continue booting,
+because my graphics card needs that to enable the external monitor.
+
+It needs to be placed before the "encrypt" hook in the list of hooks.
+This is because the Rust boot menu will try unlocking the drive by itself,
+and we want the "encrypt" hook to notice this.
+However, if we fail to unlock the drive for any reason,
+then the more reliable "encrypt" hook needs to prompt for the password anyway.
+HELPEOF
+}
