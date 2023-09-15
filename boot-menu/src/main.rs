@@ -1,4 +1,7 @@
-use std::io::{Cursor, Read, Write};
+use std::{
+    io::{Cursor, Read, Write},
+    process::Stdio,
+};
 
 use cursive::{
     align::HAlign,
@@ -85,6 +88,19 @@ struct State {
 fn main() {
     println!("Boot menu launching!");
 
+    // For ease of use, for the duration of the menu, we enable the CAD combination,
+    // which will reboot instantly.
+    // This does not compromise security if the BIOS menu is behind a password.
+    let _ = unsafe {
+        syscalls::syscall!(
+            syscalls::Sysno::reboot,
+            LINUX_REBOOT_MAGIC1,
+            LINUX_REBOOT_MAGIC2,
+            LINUX_REBOOT_CMD_CAD_ON,
+            0
+        )
+    };
+
     let mut siv = cursive::CursiveRunnable::new(cursive::backends::termion::Backend::init);
 
     siv.set_theme(main_theme());
@@ -134,6 +150,14 @@ fn main() {
     siv.run();
 }
 
+// These values are used for Linux syscalls and are taken from https://man7.org/linux/man-pages/man2/reboot.2.html
+const LINUX_REBOOT_MAGIC1: usize = 0xfee1dead;
+const LINUX_REBOOT_MAGIC2: usize = 0x28121969;
+const LINUX_REBOOT_CMD_CAD_ON: usize = 0x89abcdef;
+const LINUX_REBOOT_CMD_CAD_OFF: usize = 0;
+const LINUX_REBOOT_CMD_POWER_OFF: usize = 0x4321fedc;
+const LINUX_REBOOT_CMD_RESTART: usize = 0x1234567;
+
 fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
     match choice {
         BootMenuOption::Arch => {
@@ -141,9 +165,22 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             // This stanza is therefore allowed to use `unwrap`s, since those will exit the program just as well.
             siv.quit();
 
+            // Because we're keeping the current kernel, we should disable the CAD key combination.
+            // This will allow using it in user space safely.
+
+            unsafe {
+                syscalls::syscall!(
+                    syscalls::Sysno::reboot,
+                    LINUX_REBOOT_MAGIC1,
+                    LINUX_REBOOT_MAGIC2,
+                    LINUX_REBOOT_CMD_CAD_OFF,
+                    0
+                )
+            }
+            .unwrap();
             // Since we now know that we're booting Arch,
             // this is also when we perform the expensive video card initialization.
-            // TODO: process the result of this operation.
+            // This also happens in the bash script after the program, so it's not a problem if it fails.
 
             std::process::Command::new("modprobe")
                 .arg("nouveau")
@@ -166,7 +203,7 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
         }
         BootMenuOption::Windows => {
             // To boot into Windows, we need to first find the boot menu entry corresponding to it.
-            let mut manager = efivar::system();
+            let manager = efivar::system();
 
             let boot_menu_entries = manager.get_boot_entries();
             let boot_menu_entries = match boot_menu_entries {
@@ -273,25 +310,86 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             let attrs = VariableFlags::NON_VOLATILE
                 & VariableFlags::BOOTSERVICE_ACCESS
                 & VariableFlags::RUNTIME_ACCESS;
-            let result =
-                manager.write(&VariableName::new("BootNext"), attrs, &target_boot_entry_id);
-            match result {
+
+            // FIXME: for some reason, doing this with the library produces an Input-Output error.
+            // This is strange: normally, when writing wrong values there, only an Invalid Argument error is produced.
+            // This also happens when trying to execute the relevant operations manually!
+            // Shell out to tools to do this instead.
+
+            // let result =
+            //     manager.write(&VariableName::new("BootNext"), attrs, &target_boot_entry_id);
+            // match result {
+            //     Err(why) => {
+            //         siv.add_layer(
+            //             views::Dialog::around(views::TextView::new(format!(
+            //                 "Failed to write BootNext value into EFI variables: {why:?}"
+            //             )))
+            //             .dismiss_button("Return to menu"),
+            //         );
+            //         return;
+            //     }
+            //     Ok(_) => {
+            //         // The BootNext has been set, and now we need to reboot into Windows.
+            //         siv.add_layer(views::Dialog::around(views::TextView::new(format!(
+            //             "Rebooting into Windows..."
+            //         ))));
+            //     }
+            // };
+
+            let mut child = match std::process::Command::new("efibootmgr")
+                .arg("-n")
+                .arg(format!(
+                    "{:02X}{:02X}",
+                    target_boot_entry_id[1], target_boot_entry_id[0]
+                ))
+                .stdout(Stdio::piped())
+                .stderr(Stdio::piped())
+                .spawn()
+            {
+                Ok(c) => c,
                 Err(why) => {
                     siv.add_layer(
                         views::Dialog::around(views::TextView::new(format!(
-                            "Failed to write BootNext value into EFI variables: {why:?}"
+                            "Failed to spawn child process efibootmgr: {why:?}"
                         )))
                         .dismiss_button("Return to menu"),
                     );
                     return;
                 }
-                Ok(_) => {
-                    // The BootNext has been set, and now we need to reboot into Windows.
-                    siv.add_layer(views::Dialog::around(views::TextView::new(format!(
-                        "Rebooting into Windows..."
-                    ))));
-                }
             };
+
+            match child.wait_with_output() {
+                Ok(exit) => {
+                    if exit.status.success() {
+                        // The BootNext has been set, and now we need to reboot into Windows.
+                        siv.add_layer(views::Dialog::around(views::TextView::new(format!(
+                            "Rebooting into Windows..."
+                        ))));
+                        choose_menu(siv, &BootMenuOption::Reboot);
+                        return;
+                    } else {
+                        siv.add_layer(
+                            views::Dialog::around(views::TextView::new(format!(
+                                "efibootmgr exited with code: {:?}\n{}\n{}",
+                                exit.status.code(),
+                                String::from_utf8_lossy(&exit.stdout),
+                                String::from_utf8_lossy(&exit.stderr),
+                            )))
+                            .dismiss_button("Return to menu"),
+                        );
+                        return;
+                    }
+                }
+                Err(why) => {
+                    siv.add_layer(
+                        views::Dialog::around(views::TextView::new(format!(
+                            "Failed to get response from efibootmgr: {why:?}"
+                        )))
+                        .dismiss_button("Return to menu"),
+                    );
+                    return;
+                }
+            }
         }
         BootMenuOption::Uefi => {
             // To reboot into UEFI, we need to set the OsIndications variable to indicate
@@ -299,7 +397,7 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             // This is done by setting the least significant bit.
             // See: https://uefi.org/specs/UEFI/2.10/08_Services_Runtime_Services.html#exchanging-information-between-the-os-and-firmware
 
-            let mut manager = efivar::system();
+            let manager = efivar::system();
 
             // But first, let's also check that OsIndicationsSupported has that least significant bit set.
             let mut output = 0u64.to_le_bytes();
@@ -322,19 +420,76 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             // Now that we know we can do this, we need to write the value 1 to the OsIndications.
             // We don't need to worry about any other bits because we are the only OS right now.
             // The attrs are the expected attrs for this variable.
-            let attrs = VariableFlags::BOOTSERVICE_ACCESS & VariableFlags::RUNTIME_ACCESS;
-            let write_result = manager.write(
-                &VariableName::new("OsIndications"),
-                attrs,
-                &1u64.to_le_bytes(),
-            );
-            if let Err(why) = write_result {
-                siv.add_layer(views::Dialog::around(views::TextView::new(format!(
-                    "Failed to read EFI OsIndicationsSupported: {why:?}\nEnter UEFI settings manually."
-                ))).dismiss_button("Return to menu"));
-                return;
-            }
 
+            // FIXME: for some reason, doing this with the library produces an Input-Output error.
+            // This is strange: normally, when writing wrong values there, only an Invalid Argument error is produced.
+            // This also happens when trying to execute the relevant operations manually!
+            // Shell out to tools to do this instead.
+
+            // let attrs = VariableFlags::NON_VOLATILE
+            //     & VariableFlags::BOOTSERVICE_ACCESS
+            //     & VariableFlags::RUNTIME_ACCESS;
+            // let write_result = manager.write(
+            //     &VariableName::new("OsIndications"),
+            //     attrs,
+            //     &1u64.to_le_bytes(),
+            // );
+            // if let Err(why) = write_result {
+            //     siv.add_layer(
+            //         views::Dialog::around(views::TextView::new(format!(
+            //             "Failed to write OsIndications: {why:?}\nEnter UEFI settings manually."
+            //         )))
+            //         .dismiss_button("Return to menu"),
+            //     );
+            //     return;
+            // }
+
+            // Use bootctl program to enable reboot to firmware
+
+            match std::process::Command::new("bootctl")
+                .arg("reboot-to-firmware")
+                .arg("1")
+                .spawn()
+            {
+                Ok(mut child) => {
+                    match child.wait() {
+                        Err(why) => {
+                            siv.add_layer(
+                                views::Dialog::around(views::TextView::new(format!(
+                                    "Failed to wait for bootctl: {why:?}\nEnter UEFI settings manually."
+                                )))
+                                .dismiss_button("Return to menu"),
+                            );
+                            return;
+                        }
+                        Ok(status) => {
+                            match status.success() {
+                                true => {
+                                    // Successfully set, continuing to reboot
+                                }
+                                false => {
+                                    siv.add_layer(views::Dialog::around(views::TextView::new(format!(
+                                        "Failed to use bootctl to set OsIndications (status is {:?})\nEnter UEFI settings manually.",
+                                        status.code()
+                                    )))
+                                    .dismiss_button("Return to menu"));
+
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                Err(why) => {
+                    siv.add_layer(
+                        views::Dialog::around(views::TextView::new(format!(
+                            "Failed to call bootctl: {why:?}\nEnter UEFI settings manually."
+                        )))
+                        .dismiss_button("Return to menu"),
+                    );
+                    return;
+                }
+            };
             siv.add_layer(views::Dialog::around(views::TextView::new(format!(
                 "Rebooting into UEFI..."
             ))));
@@ -357,8 +512,15 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             }
 
             // Note: the `arg` parameter is explicitly set as zero. I think that's acceptable, but I don't know for sure.
-            let reboot_result =
-                unsafe { syscalls::syscall!(syscalls::Sysno::reboot, 0x4321fedc, 0) };
+            let reboot_result = unsafe {
+                syscalls::syscall!(
+                    syscalls::Sysno::reboot,
+                    LINUX_REBOOT_MAGIC1,
+                    LINUX_REBOOT_MAGIC2,
+                    LINUX_REBOOT_CMD_POWER_OFF,
+                    0
+                )
+            };
             if let Err(why) = reboot_result {
                 let why = why.name_and_description();
                 siv.add_layer(views::Dialog::around(views::TextView::new(format!(
@@ -378,8 +540,15 @@ fn choose_menu(siv: &mut Cursive, choice: &BootMenuOption) {
             }
 
             // Note: the `arg` parameter is explicitly set as zero. I think that's acceptable, but I don't know for sure.
-            let reboot_result =
-                unsafe { syscalls::syscall!(syscalls::Sysno::reboot, 0x1234567, 0) };
+            let reboot_result = unsafe {
+                syscalls::syscall!(
+                    syscalls::Sysno::reboot,
+                    LINUX_REBOOT_MAGIC1,
+                    LINUX_REBOOT_MAGIC2,
+                    LINUX_REBOOT_CMD_RESTART,
+                    0
+                )
+            };
             if let Err(why) = reboot_result {
                 let why = why.name_and_description();
                 siv.add_layer(views::Dialog::around(views::TextView::new(format!(

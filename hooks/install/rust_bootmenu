@@ -6,6 +6,9 @@ build() {
     add_binary "openvt"
     add_binary "chvt"
     add_binary "deallocvt"
+    add_binary "strace" # This executable isn't used, but removing it makes the TUI app fail.
+    add_binary "efibootmgr"  # this also loads the efi shared lib
+    add_binary "bootctl"
 
     add_runscript
 }
