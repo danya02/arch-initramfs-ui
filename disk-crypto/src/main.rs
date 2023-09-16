@@ -23,9 +23,11 @@ fn main() -> anyhow::Result<()> {
             .create(false)
             .open("encrypt-config.json");
         if let Ok(_file) = existing_file {
-            if !Confirm::with_theme(&theme).with_prompt("Found file encrypt-config.json already; do you want to delete it and regenerate all keys?").interact()? {
-            std::fs::remove_file("encrypt-config.json")?;
-        }
+            if Confirm::with_theme(&theme).with_prompt("Found file encrypt-config.json already; do you want to delete it and regenerate all keys?").interact()? {
+                std::fs::remove_file("encrypt-config.json")?;
+            } else {
+                return Ok(());
+            }
         }
     }
 
@@ -87,7 +89,7 @@ fn main() -> anyhow::Result<()> {
             .with_confirmation("Repeat PIN", "Error: the PINs don't match.")
             .interact()?;
         let slots = 16;
-        println!("We will enroll {slots} slots. You may need to press the Yubikey button.");
+        println!("We will enroll {slots} slots. You may need to hold down the Yubikey button.");
         let chalresp = |data: [u8; 32]| -> Option<[u8; 20]> {
             let data = hex_string::HexString::from_bytes(&data.to_vec());
             println!("Trying to perform challenge-response with ykchalresp and value={data:?}...");
