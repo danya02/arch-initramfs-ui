@@ -1,12 +1,13 @@
 use std::{
-    io::{Cursor, Read, Write},
+    io::{Cursor, Read, Seek, Write},
     process::Stdio,
 };
 
 use cursive::{align::HAlign, views, Cursive, View};
 use efivar::efi::{VariableFlags, VariableName};
+use rand::Rng;
 
-use crate::{password_input::password_entry, LoginState, State};
+use crate::{password_input::password_entry, spinner::spinner_view, LoginState, State};
 
 // These values are used for Linux syscalls and are taken from https://man7.org/linux/man-pages/man2/reboot.2.html
 pub const LINUX_REBOOT_MAGIC1: usize = 0xfee1dead;
@@ -80,11 +81,9 @@ pub fn choose_exit(siv: &mut Cursive, choice: &BootMenuExitOption) {
         BootMenuExitOption::Arch => {
             // Booting into Arch just means exiting the program and continuing the boot process.
             // This stanza is therefore allowed to use `unwrap`s, since those will exit the program just as well.
-            siv.quit();
 
             // Because we're keeping the current kernel, we should disable the CAD key combination.
             // This will allow using it in user space safely.
-
             unsafe {
                 syscalls::syscall!(
                     syscalls::Sysno::reboot,
@@ -99,24 +98,109 @@ pub fn choose_exit(siv: &mut Cursive, choice: &BootMenuExitOption) {
             // this is also when we perform the expensive video card initialization.
             // This also happens in the bash script after the program, so it's not a problem if it fails.
 
-            std::process::Command::new("modprobe")
+            let mut modprobe_handle = std::process::Command::new("modprobe")
                 .arg("nouveau")
                 .spawn()
-                .unwrap()
-                .wait()
                 .unwrap();
-            // Before continuing, we should also clear the screen.
-            // To do this, we print the output of the `clear` command to the screen.
-            let clear_screen_magic = [
-                0x1b, 0x5b, 0x48, 0x1b, 0x5b, 0x32, 0x4a, 0x1b, 0x5b, 0x33, 0x4a,
-            ];
-            std::io::stdout()
-                .lock()
-                .write_all(&clear_screen_magic)
-                .unwrap();
-            std::io::stdout().lock().flush().unwrap();
 
-            // At this point, we should be exiting fully.
+            // Now we need to get the keyfile content,
+            // and write it to disk.
+            // The root partition is currently on ramdisk,
+            // so we can just write it there.
+
+            siv.add_layer(views::Dialog::around(
+                views::LinearLayout::new(cursive::direction::Orientation::Horizontal)
+                    .child(spinner_view())
+                    .child(views::TextView::new("Unlocking system disk...")),
+            ));
+
+            // At this point, there should be no opportunity for the keyfile to not be present.
+            // That means that we can use unwraps here;
+            // but, if it turns out to not be present, then the normal encrypt fallback will be called.
+            let data: &mut State = siv.user_data().unwrap();
+            let keyfile = data.keyfile.as_ref().unwrap().to_vec();
+
+            // In order for menus to appear, all this needs to be happening in a thread.
+            let cb_sink = siv.cb_sink().clone();
+            std::thread::spawn(move || {
+                // Write the keyfile to the `/crypto_keyfile.bin` file, so that if we fail to run cryptsetup,
+                // the normal encrypt hook can try it before falling back to password.
+                let mut out = std::fs::OpenOptions::new()
+                    .write(true)
+                    .create(true)
+                    .open("/crypto_keyfile.bin")
+                    .unwrap();
+                out.write_all(&keyfile).unwrap();
+                // Prepare to overwrite the keyfile if we succeed in unlocking the drive.
+                out.seek(std::io::SeekFrom::Start(0)).unwrap();
+                // Try opening the drive
+                let child = std::process::Command::new("cryptsetup")
+                    .arg("--key-file")
+                    .arg("/crypto_keyfile.bin")
+                    .arg("open")
+                    .arg("/dev/nvme0n1p3") // NOTE: this is where the main cryptdisk is on my system!
+                    .arg("cryptlvm")
+                    .stdin(Stdio::null())
+                    .stdout(Stdio::piped())
+                    .stderr(Stdio::piped())
+                    .spawn()
+                    .unwrap();
+
+                let output = child.wait_with_output().unwrap();
+                if !output.status.success() {
+                    // If failed to decrypt, show a message about this.
+                    // Do not exit on my own.
+                    cb_sink
+                    .send(Box::new(move |siv| {
+                        siv.add_layer(views::Dialog::around(views::TextView::new(&format!("Failed to unlock disk with cryptsetup:\n{}\n{}\nYou will need to use the backup password.", String::from_utf8_lossy(&output.stdout), String::from_utf8_lossy(&output.stderr)))).button("Exit", |siv| siv.quit()));
+                        ()
+                    }))
+                    .unwrap();
+
+                    return;
+                }
+
+                // If here, successfully unlocked!
+                // Wipe the keyfile by overwriting the content with random multiple times.
+                let mut rng = rand::rngs::OsRng::default();
+                let mut chunk: [u8; 512] = [0; 512];
+                for _ in 0..4 {
+                    let mut written = 0;
+                    out.seek(std::io::SeekFrom::Start(0)).unwrap();
+
+                    while written < keyfile.len() {
+                        rng.fill(&mut chunk);
+                        written += out.write(&chunk).unwrap();
+                    }
+                }
+
+                // Clear the screen of layers
+                // (We probably have fewer than 8 layers)
+                for _ in 0..8 {
+                    cb_sink
+                        .send(Box::new(|siv| {
+                            siv.pop_layer();
+                            ()
+                        }))
+                        .unwrap();
+                }
+
+                modprobe_handle.wait().unwrap();
+                cb_sink.send(Box::new(|siv| siv.quit())).unwrap();
+
+                // Before continuing, we should also clear the screen.
+                // To do this, we print the output of the `clear` command to the screen.
+                let clear_screen_magic = [
+                    0x1b, 0x5b, 0x48, 0x1b, 0x5b, 0x32, 0x4a, 0x1b, 0x5b, 0x33, 0x4a,
+                ];
+                std::io::stdout()
+                    .lock()
+                    .write_all(&clear_screen_magic)
+                    .unwrap();
+                std::io::stdout().lock().flush().unwrap();
+
+                // At this point, we should be exiting fully.
+            });
         }
         BootMenuExitOption::Windows => {
             // To boot into Windows, we need to first find the boot menu entry corresponding to it.

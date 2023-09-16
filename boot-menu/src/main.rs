@@ -1,5 +1,7 @@
+#![feature(div_duration)]
 mod exits;
 mod password_input;
+mod spinner;
 
 use std::sync::{Arc, Mutex};
 
@@ -149,6 +151,8 @@ fn main() {
 
     // Do not allow closing the app with ^C.
     siv.clear_global_callbacks(cursive::event::Event::CtrlChar('c'));
+
+    siv.set_autorefresh(true);
 
     // Immediately after this, spawn another layer. This will prompt the user for a password.
     password_entry(&mut siv);

@@ -11,6 +11,7 @@ use cursive::{
 
 use crate::{
     exits::{full_menu, partial_menu},
+    spinner::spinner_view,
     LoginState, State,
 };
 
@@ -118,9 +119,11 @@ pub fn password_entry(siv: &mut Cursive) {
                     // Remove the password entry box, and show a "waiting" box,
                     // and in a thread start verifying the result.
                     siv.pop_layer();
-                    siv.add_layer(views::Dialog::around(views::TextView::new(
-                        "Verifying password...",
-                    )));
+                    siv.add_layer(views::Dialog::around(
+                        views::LinearLayout::new(cursive::direction::Orientation::Horizontal)
+                            .child(spinner_view())
+                            .child(views::TextView::new("Verifying password...")),
+                    ));
 
                     let cb_sink = siv.cb_sink().clone();
                     let pw = text.to_string();
@@ -191,9 +194,13 @@ pub fn yubikey_pinentry(siv: &mut Cursive) {
                     // Remove the password entry box, and show a "waiting" box,
                     // and in a thread start verifying the result.
                     siv.pop_layer();
-                    siv.add_layer(views::Dialog::around(views::TextView::new(
-                        "Verifying PIN code; you may need to touch your Yubikey now...",
-                    )));
+                    siv.add_layer(views::Dialog::around(
+                        views::LinearLayout::new(cursive::direction::Orientation::Horizontal)
+                            .child(spinner_view())
+                            .child(views::TextView::new(
+                                "Verifying PIN code; you may need to touch your Yubikey now...",
+                            )),
+                    ));
 
                     let cb_sink = siv.cb_sink().clone();
                     let pw = text.to_string();
