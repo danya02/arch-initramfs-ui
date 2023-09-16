@@ -3,8 +3,10 @@ use std::{
     process::Stdio,
 };
 
-use cursive::{views, Cursive};
+use cursive::{align::HAlign, views, Cursive, View};
 use efivar::efi::{VariableFlags, VariableName};
+
+use crate::{password_input::password_entry, LoginState, State};
 
 // These values are used for Linux syscalls and are taken from https://man7.org/linux/man-pages/man2/reboot.2.html
 pub const LINUX_REBOOT_MAGIC1: usize = 0xfee1dead;
@@ -20,6 +22,56 @@ pub enum BootMenuExitOption {
     Uefi,
     Poweroff,
     Reboot,
+}
+
+pub fn full_menu() -> impl View {
+    views::Dialog::around({
+        let mut select = views::SelectView::new()
+            // Center the text horizontally
+            .h_align(HAlign::Center)
+            // Use keyboard to jump to the pressed letters
+            .autojump();
+        select.add_item("Boot into Arch Linux", BootMenuExitOption::Arch);
+        select.add_item("Boot into Windows", BootMenuExitOption::Windows);
+        select.add_item("Boot into UEFI Settings", BootMenuExitOption::Uefi);
+        select.add_item("Reboot", BootMenuExitOption::Reboot);
+        select.add_item("Poweroff", BootMenuExitOption::Poweroff);
+
+        select.set_on_submit(choose_exit);
+
+        select
+    })
+    .title("Boot menu")
+}
+
+pub fn partial_menu() -> impl View {
+    views::Dialog::around({
+        let mut select = views::SelectView::new()
+            // Center the text horizontally
+            .h_align(HAlign::Center)
+            // Use keyboard to jump to the pressed letters
+            .autojump();
+        select.add_item("Try logging in again", None);
+        select.add_item("Reboot", Some(BootMenuExitOption::Reboot));
+        select.add_item("Poweroff", Some(BootMenuExitOption::Poweroff));
+
+        select.set_on_submit(|siv, v| match v {
+            None => {
+                // Set the state to be logging in.
+                let data: &mut State = siv.user_data().unwrap();
+                *data.login_state.lock().unwrap() = LoginState::WaitingForLogin;
+
+                // Pop the current layer and spawn the password entry box.
+                // If we need Yubikey, it'll get swapped out soon.
+                siv.pop_layer();
+                password_entry(siv);
+            }
+            Some(choice) => choose_exit(siv, choice),
+        });
+
+        select
+    })
+    .title("Boot menu")
 }
 
 /// This function terminates the boot menu in one of several ways.

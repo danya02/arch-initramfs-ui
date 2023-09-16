@@ -9,7 +9,10 @@ use cursive::{
     Cursive,
 };
 
-use crate::{LoginState, State};
+use crate::{
+    exits::{full_menu, partial_menu},
+    LoginState, State,
+};
 
 /// This thread is responsible for switching between the two different types of password entry.
 ///
@@ -106,12 +109,60 @@ pub fn password_entry(siv: &mut Cursive) {
                     // TODO: right now we do not do anything with the password we read.
                     // Later, this should be validated, e.g. for decrypting the root partition.
                     let data: &mut State = siv.user_data().unwrap();
-                    data.password = Some(text.to_string());
                     let mut stateref = data.login_state.lock().unwrap();
-                    *stateref = LoginState::LogInOkay;
+                    *stateref = LoginState::ValidatingLogin;
                     drop(stateref);
 
+                    let config = data.config.clone();
+
+                    // Remove the password entry box, and show a "waiting" box,
+                    // and in a thread start verifying the result.
                     siv.pop_layer();
+                    siv.add_layer(views::Dialog::around(views::TextView::new(
+                        "Verifying password...",
+                    )));
+
+                    let cb_sink = siv.cb_sink().clone();
+                    let pw = text.to_string();
+                    std::thread::spawn(move || match config.try_keyfile_from_password(pw) {
+                        Ok(keyfile) => {
+                            cb_sink
+                                .send(Box::new(|siv| {
+                                    let data: &mut State = siv.user_data().unwrap();
+
+                                    // Set the state to be logged in, and save the keyfile contents.
+                                    data.keyfile = Some(keyfile);
+                                    *data.login_state.lock().unwrap() = LoginState::LogInOkay;
+
+                                    // Pop the waiting dialog, and draw the full menu.
+                                    siv.pop_layer();
+                                    siv.add_layer(full_menu());
+                                }))
+                                .unwrap();
+                        }
+                        Err(_) => {
+                            cb_sink
+                                .send(Box::new(|siv| {
+                                    let data: &mut State = siv.user_data().unwrap();
+
+                                    // Set the state to be failed.
+                                    *data.login_state.lock().unwrap() = LoginState::LogInFail;
+
+                                    // Pop the waiting dialog, then draw the reduced menu,
+                                    // and on top of that draw an error message.
+                                    siv.pop_layer();
+                                    siv.add_layer(partial_menu());
+                                    siv.add_layer(
+                                        views::Dialog::around(views::TextView::new(
+                                            "Failed to unlock with password",
+                                        ))
+                                        .title("Error")
+                                        .dismiss_button("OK"),
+                                    )
+                                }))
+                                .unwrap();
+                        }
+                    });
                 });
                 edit
             }))
@@ -131,12 +182,69 @@ pub fn yubikey_pinentry(siv: &mut Cursive) {
                     // TODO: right now we do not do anything with the password we read.
                     // Later, this should be validated, e.g. for decrypting the root partition.
                     let data: &mut State = siv.user_data().unwrap();
-                    data.password = Some(text.to_string());
                     let mut stateref = data.login_state.lock().unwrap();
-                    *stateref = LoginState::LogInOkay;
+                    *stateref = LoginState::ValidatingLogin;
                     drop(stateref);
 
+                    let config = data.config.clone();
+
+                    // Remove the password entry box, and show a "waiting" box,
+                    // and in a thread start verifying the result.
                     siv.pop_layer();
+                    siv.add_layer(views::Dialog::around(views::TextView::new(
+                        "Verifying PIN code; you may need to touch your Yubikey now...",
+                    )));
+
+                    let cb_sink = siv.cb_sink().clone();
+                    let pw = text.to_string();
+                    std::thread::spawn(move || {
+                        // We need to try the Yubikey a couple times,
+                        // because only one process may use it at one time,
+                        // and the detection thread could be still running its copy.
+                        let resp = config
+                            .try_keyfile_from_pin(pw.clone())
+                            .or_else(|_| config.try_keyfile_from_pin(pw.clone()))
+                            .or_else(|_| config.try_keyfile_from_pin(pw.clone()));
+                        match resp {
+                            Ok(keyfile) => {
+                                cb_sink
+                                    .send(Box::new(|siv| {
+                                        let data: &mut State = siv.user_data().unwrap();
+
+                                        // Set the state to be logged in, and save the keyfile contents.
+                                        data.keyfile = Some(keyfile);
+                                        *data.login_state.lock().unwrap() = LoginState::LogInOkay;
+
+                                        // Pop the waiting dialog, and draw the full menu.
+                                        siv.pop_layer();
+                                        siv.add_layer(full_menu());
+                                    }))
+                                    .unwrap();
+                            }
+                            Err(_) => {
+                                cb_sink
+                                    .send(Box::new(|siv| {
+                                        let data: &mut State = siv.user_data().unwrap();
+
+                                        // Set the state to be failed.
+                                        *data.login_state.lock().unwrap() = LoginState::LogInFail;
+
+                                        // Pop the waiting dialog, then draw the reduced menu,
+                                        // and on top of that draw an error message.
+                                        siv.pop_layer();
+                                        siv.add_layer(partial_menu());
+                                        siv.add_layer(
+                                            views::Dialog::around(views::TextView::new(
+                                                "Failed to unlock with Yubikey",
+                                            ))
+                                            .title("Error")
+                                            .dismiss_button("OK"),
+                                        )
+                                    }))
+                                    .unwrap();
+                            }
+                        }
+                    });
                 });
                 edit
             }))

@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use serde_with::{base64::Base64, serde_as};
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 /// This structure stores the parameters for decrypting the disk.
 pub struct EncryptionParams {
     pub(crate) keyfile: EncryptedKeyfile,
@@ -9,7 +9,7 @@ pub struct EncryptionParams {
 }
 
 #[serde_as]
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 /// This is the encrypted disk keyfile.
 /// If you decrypt this successfully, you should be able to unlock the disk.
 pub struct EncryptedKeyfile {
@@ -23,7 +23,7 @@ pub struct EncryptedKeyfile {
 }
 
 #[serde_as]
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 /// The data for decrypting the keyfile with the password
 pub struct PasswordAuthParameters {
     /// Argon2id param
@@ -45,14 +45,14 @@ pub struct PasswordAuthParameters {
     pub(crate) encrypted_kek: EncryptedKek,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 /// The data for decrypting the keyfile with the Yubikey
 pub struct YubikeyAuthParams {
     pub slots: Vec<YubikeyAuthSlot>,
 }
 
 #[serde_as]
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct YubikeyAuthSlot {
     /// Challenge seed. Concatenate this with the PIN
     /// to get the challenge for the Yubikey
@@ -77,7 +77,7 @@ pub struct YubikeyAuthSlot {
 }
 
 #[serde_as]
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct EncryptedKek {
     #[serde_as(as = "Base64")]
     pub(crate) ciphertext: Vec<u8>,

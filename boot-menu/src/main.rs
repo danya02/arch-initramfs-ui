@@ -9,6 +9,7 @@ use cursive::{
     view::Margins,
     views, With,
 };
+use disk_crypto::params::EncryptionParams;
 
 use crate::{
     exits::{
@@ -107,14 +108,19 @@ impl Default for LoginState {
     }
 }
 
-#[derive(Default)]
 struct State {
-    password: Option<String>,
+    keyfile: Option<Vec<u8>>,
     login_state: Arc<Mutex<LoginState>>,
+    config: EncryptionParams,
 }
 
 fn main() {
     println!("Boot menu launching!");
+
+    // The first thing we need to do is to parse the encryption config.
+    let config_txt = include_str!("../../disk-crypto/encrypt-config.json");
+    let config: EncryptionParams = serde_json::from_str(config_txt)
+        .expect("Compiled-in encryption JSON is invalid -- please rebuild boot-menu");
 
     // For ease of use, for the duration of the menu, we enable the CAD combination,
     // which will reboot instantly.
@@ -133,33 +139,16 @@ fn main() {
     let mut siv = cursive::CursiveRunnable::new(cursive::backends::termion::Backend::init);
 
     siv.set_theme(main_theme());
-    let state = State::default();
+    let state = State {
+        config,
+        keyfile: None,
+        login_state: Arc::new(Mutex::new(LoginState::default())),
+    };
     let login_state = state.login_state.clone();
     siv.set_user_data(state);
 
     // Do not allow closing the app with ^C.
     siv.clear_global_callbacks(cursive::event::Event::CtrlChar('c'));
-
-    // The top level view is a select between the different boot options.
-    siv.add_layer(
-        views::Dialog::around({
-            let mut select = views::SelectView::new()
-                // Center the text horizontally
-                .h_align(HAlign::Center)
-                // Use keyboard to jump to the pressed letters
-                .autojump();
-            select.add_item("Boot into Arch Linux", BootMenuExitOption::Arch);
-            select.add_item("Boot into Windows", BootMenuExitOption::Windows);
-            select.add_item("Boot into UEFI Settings", BootMenuExitOption::Uefi);
-            select.add_item("Reboot", BootMenuExitOption::Reboot);
-            select.add_item("Poweroff", BootMenuExitOption::Poweroff);
-
-            select.set_on_submit(choose_exit);
-
-            select
-        })
-        .title("Boot menu"),
-    );
 
     // Immediately after this, spawn another layer. This will prompt the user for a password.
     password_entry(&mut siv);
