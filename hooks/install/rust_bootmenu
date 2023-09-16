@@ -9,6 +9,8 @@ build() {
     add_binary "strace" # This executable isn't used, but removing it makes the TUI app fail.
     add_binary "efibootmgr"  # this also loads the efi shared lib
     add_binary "bootctl"
+    add_binary "ykinfo"
+    add_binary "ykchalresp"
 
     add_runscript
 }
